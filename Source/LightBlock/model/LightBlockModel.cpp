@@ -53,6 +53,7 @@ Array<WeakReference<Controllable>> LightBlockModel::getModelParameters()
 	return paramsContainer->getAllControllables();
 }
 
+
 Array<Colour> LightBlockModel::getColors(Prop * p, double time, var params)
 {
 	Array<Colour> result;

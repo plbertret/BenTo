@@ -260,6 +260,7 @@ void RangePattern::getColorsInternal(Array<Colour>* result, Prop* p, double time
 }
 
 
+
 MultiPointPattern::MultiPointPattern(var params) :
 	PatternBlock(getTypeString(), params)
 {

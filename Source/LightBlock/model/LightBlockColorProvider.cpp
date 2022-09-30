@@ -39,6 +39,12 @@ void LightBlockColorProvider::onContainerTriggerTriggered(Trigger * t)
 
 }
 
+float LightBlockColorProvider::getBlackBrightness(Prop* p, double time, var params)
+{
+	return 0;
+}
+
+
 Array<Colour> LightBlockColorProvider::getColors(Prop* p, double time, var params)
 {
 	return Array<Colour>();

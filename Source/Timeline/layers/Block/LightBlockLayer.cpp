@@ -40,6 +40,26 @@ LightBlockLayer::~LightBlockLayer()
 
 }
 
+float LightBlockLayer::getBlackBrightness(Prop* p, double time, var params) {
+	Array<LayerBlock*> blocks = blockClipManager.getBlocksAtTime(time, false);
+	float brightness = 0;
+	int layerPropID = params.getProperty("forceID", -1);
+	for (auto& b : blocks)
+	{
+		LightBlockClip* clip = (LightBlockClip*)b;
+
+		int localID = ((LightBlockClip*)b)->filterManager->getTargetIDForProp(p);
+		if (localID == -1) continue;
+		params.getDynamicObject()->setProperty("forceID", localID != p->globalID->intValue() ? localID : layerPropID);
+		brightness += clip->getBlackBrightness(p, time, params);
+
+	}
+
+	return brightness;
+}
+
+
+
 Array<Colour> LightBlockLayer::getColors(Prop * p, double time, var params)
 {
 	Array<LayerBlock *> blocks = blockClipManager.getBlocksAtTime(time, false);

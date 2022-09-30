@@ -37,6 +37,7 @@
 
 #include "model/blocks/dmx/DMXBlock.h"
 
+#include "model/blocks/blacklight/BlacklightBlock.h"
 #include "model/blocks/node/NodeBlock.h"
 
 #include "model/blocks/pattern/PatternBlock.h"
@@ -53,6 +54,7 @@
 #include "model/blocks/video/TextureBlock.h"
 #include "model/blocks/video/LiveFeedBlock.h"
 #include "model/blocks/video/VideoBlock.h"
+#include "model/blocks/video/TouchdesignerBlock.h"
 
 #include "model/LightBlockModelLibrary.h"
 

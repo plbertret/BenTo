@@ -30,7 +30,8 @@ public:
 	PropClusterGroup* currentIdentityGroup;
 
 	PropClusterGroupManager clusterGroupManager;
-	
+
+	float getBlackBrightness(Prop* p, double time, var params);
 	Array<Colour> getColors(Prop * p, double time, var params);
 	Array<LightBlockLayer *> getLayersForProp(Prop * p, bool includeDisabled = false);
 

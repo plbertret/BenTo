@@ -83,6 +83,7 @@ public:
 
 	SpinLock colorLock;
 	Array<Colour> colors;
+	float blackBrightness = 0;
 
 	std::unique_ptr<LightBlock> currentBlock;
 	TargetParameter* activeProvider;
@@ -105,8 +106,11 @@ public:
 	void onControllableFeedbackUpdateInternal(ControllableContainer* cc, Controllable* c) override;
 	void inspectableDestroyed(Inspectable*) override;
 
+	
+	void sendBlackColorToProp(bool forceSend = false);
 	void sendColorsToProp(bool forceSend = false);
 	virtual void sendColorsToPropInternal() {}
+	virtual void sendBlackColorToPropInternal() {}
 
 	static void fillTypeOptions(EnumParameter* p);
 

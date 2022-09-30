@@ -25,6 +25,7 @@ public:
 
 	var paramsLoadData;
 
+	float getBlackBrightness(Prop* p, double time, var params);
 	Array<Colour> getColors(Prop* p, double time, var params) override;
 	void filterColors(Array<Colour>* result, Prop* p, double time, var params);
 	var getLocalParams(Prop* p, double time, var params);

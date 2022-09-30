@@ -58,6 +58,7 @@ public:
 	
 	virtual Array<WeakReference<Controllable>> getModelParameters() = 0;
 
+	virtual float getBlackBrightness(Prop* p, double time, var params);
 	virtual Array<Colour> getColors(Prop* p, double time, var params) override;
 	virtual BakeData getBakeDataForProp(Prop*) override;
 

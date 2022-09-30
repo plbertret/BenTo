@@ -47,6 +47,11 @@ LightBlockModelUI * TimelineBlock::createUI()
 }
 
 
+float TimelineBlock::getBlackBrightness(Prop* p, double time, var params)
+{
+	return sequence->getBlackBrightness(p, time, params);
+}
+
 Array<Colour> TimelineBlock::getColors(Prop * p, double time, var params)
 {
 	return sequence->getColors(p, time, params);

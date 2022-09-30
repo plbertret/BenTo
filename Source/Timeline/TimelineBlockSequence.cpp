@@ -42,6 +42,23 @@ TimelineBlockSequence::~TimelineBlockSequence()
 {
 }
 
+float TimelineBlockSequence::getBlackBrightness(Prop* p, double time, var params) {
+
+	Array<LightBlockLayer*> layers = getLayersForProp(p);
+	int numLayers = layers.size();
+	float brightness = 0;
+	float t = params.getProperty("sequenceTime", true) ? currentTime->floatValue() : time;
+	if (numLayers > 0) {
+		for (auto& l : layers)
+		{
+			if (l == nullptr) continue;
+			brightness += l->getBlackBrightness(p, t, params); //use sequence's time instead of prop time
+		}
+	}
+	return brightness;
+}
+
+
 Array<Colour> TimelineBlockSequence::getColors(Prop * p, double time, var params)
 {
 	if (identityMode->boolValue() && currentIdentityGroup != nullptr)

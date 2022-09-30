@@ -36,6 +36,7 @@ public:
 	std::unique_ptr<LightBlockModel> pointBlock;
 	std::unique_ptr<LightBlockModel> multiPointBlock;
 	std::unique_ptr<LightBlockModel> rangeBlock;
+	std::unique_ptr<LightBlockModel> blacklightBlock;
 
 	//Generic / Filters
 	LightBlockModelGroup genericFilterBlocks;
@@ -46,7 +47,7 @@ public:
 	//Live Feed
 	//std::unique_ptr<LightBlockModel> videoBlock;
 	//std::unique_ptr<LightBlockModel> shapeBlock;
-	//std::unique_ptr<LightBlockModel> dmxBlock;
+	std::unique_ptr<LightBlockModel> dmxBlock;
 
 	//Interface
 	IntParameter * iconSize;

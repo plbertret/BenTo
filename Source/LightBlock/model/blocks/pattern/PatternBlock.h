@@ -148,6 +148,7 @@ public:
 	String getTypeString() const override { return "Range"; }
 };
 
+
 class MultiPointPattern :
 	public PatternBlock
 {

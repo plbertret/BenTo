@@ -19,8 +19,8 @@ TextureBlock::TextureBlock(const String &name, var params) :
 
 	currentLayout = paramsContainer->addEnumParameter("Layout", "The Layout to use. You can edit them by clicking inside the Spatializer window");
 
-	saveAndLoadName = false;
-	saveType = false;
+	saveAndLoadName = true;
+	saveType = true;
 
 
 	updateLayoutOptions();

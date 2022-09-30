@@ -113,6 +113,17 @@ void BentoProp::portRemoved(SerialDevice* d)
 }
 
 
+void BentoProp::sendBlackColorToPropInternal() {
+	OSCMessage msg("/black");
+	BentoEngine* be = (BentoEngine*)Engine::mainEngine;
+
+	msg.addFloat32(blackBrightness);
+	String ip = remoteHost->stringValue();
+	be->globalSender.sendToIPAddress(ip, 9000, msg);
+}
+
+
+
 void BentoProp::sendColorsToPropInternal()
 {
 	const int numLeds = resolution->intValue();

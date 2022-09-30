@@ -50,6 +50,7 @@ profile
 **/VisualStudio2019/x64
 **/VisualStudio2022/x64
 **/Builds/x64
+**/Builds/*
 **/.vs
 **/CodeBlocks/bin
 **/CodeBlocks/obj
@@ -57,6 +58,8 @@ profile
 **/CodeBlocks/*.layout
 **/Builds/Android/.gradle
 **/Builds/Android/.idea
+**/Builds/VisualStudio2019_CI/
+**/Builds/VisualStudio2019_CI/*
 **/Builds/Android/build
 **/Builds/Android/**/*.iml
 **/Builds/Android/local.properties

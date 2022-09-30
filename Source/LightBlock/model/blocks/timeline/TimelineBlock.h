@@ -26,6 +26,7 @@ public:
 
 	std::unique_ptr<TimelineBlockSequence> sequence;
 
+	float getBlackBrightness(Prop* p, double time, var params) override;
 	Array<Colour> getColors(Prop * p, double time, var params) override;
 
 	BakeData getBakeDataForProp(Prop * p) override;

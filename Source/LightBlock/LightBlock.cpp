@@ -25,6 +25,17 @@ LightBlock::~LightBlock()
 	if (!provider.wasObjectDeleted()) provider->removeColorProviderListener(this);
 }
 
+
+float LightBlock::getBlackBrightness(Prop* p, double time, var params) {
+	var localParams = getLocalParams(p, time, params);
+
+	if (provider.wasObjectDeleted()){
+		return 0;
+	}
+
+	return provider->getBlackBrightness(p, time, localParams);
+}
+
 Array<Colour> LightBlock::getColors(Prop * p, double time, var params)
 {
 	var localParams = getLocalParams(p, time, params);

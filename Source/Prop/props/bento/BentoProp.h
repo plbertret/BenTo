@@ -41,6 +41,7 @@ public:
 	virtual void portRemoved(SerialDevice* d) override;
 
 	virtual void sendColorsToPropInternal() override;
+	virtual void sendBlackColorToPropInternal() override;
 
 	virtual void uploadBakedData(BakeData data) override;
 	virtual void exportBakedData(BakeData data) override;

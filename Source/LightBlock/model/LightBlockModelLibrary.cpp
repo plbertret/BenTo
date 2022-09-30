@@ -23,6 +23,7 @@ LightBlockModelLibrary::LightBlockModelLibrary() :
 	genericFilterBlocks("Generic Filters")
 {
 
+
 	scriptBlocks.itemDataType = "Script";
 	scriptBlocks.itemDataType = "Wasm";
 	pictureBlocks.itemDataType = "Picture";
@@ -38,6 +39,8 @@ LightBlockModelLibrary::LightBlockModelLibrary() :
 	pointBlock.reset(new PointPattern());
 	multiPointBlock.reset(new MultiPointPattern());
 	rangeBlock.reset(new RangePattern());
+	blacklightBlock.reset(new BlacklightBlock());
+	//touchdesignerBlock.reset(new TouchdesignerBlock());
 
 	//videoBlock.reset(new VideoBlock());;
 	//shapeBlock.reset(new ShapeEditorBlock());;
@@ -50,6 +53,8 @@ LightBlockModelLibrary::LightBlockModelLibrary() :
 	genericBlocks.addChildControllableContainer(pointBlock.get());
 	genericBlocks.addChildControllableContainer(multiPointBlock.get());
 	genericBlocks.addChildControllableContainer(rangeBlock.get());
+	genericBlocks.addChildControllableContainer(blacklightBlock.get());
+	//genericBlocks.addChildControllableContainer(touchdesignerBlock.get());
 
 	addChildControllableContainer(&genericBlocks);
 

@@ -242,6 +242,8 @@ void Prop::update()
 	HashMap<String, PropComponent*>::Iterator it(components);
 	while (it.next()) it.getValue()->update();
 
+	float newBlackBrightness = -1;
+
 	if (findPropMode->boolValue())
 	{
 		colors.fill(Colours::white.withBrightness(.5f));
@@ -259,6 +261,8 @@ void Prop::update()
 		colorLock.enter();
 		colors = currentBlock->getColors(this, time, var());
 		colorLock.exit();
+		newBlackBrightness = currentBlock->getBlackBrightness(this, time, var());
+
 
 		if (Engine::mainEngine != nullptr && !Engine::mainEngine->isClearing)
 		{
@@ -274,6 +278,11 @@ void Prop::update()
 		&& (rgbComponent != nullptr && rgbComponent->streamEnable->boolValue()))
 	{
 		sendColorsToProp();
+
+		if (newBlackBrightness != -1 && newBlackBrightness != blackBrightness) {
+			blackBrightness = newBlackBrightness;
+			sendBlackColorToProp();
+		}
 	}
 	else if (seekBakeTime != -1)
 	{
@@ -352,6 +361,13 @@ void Prop::inspectableDestroyed(Inspectable* i)
 	if (currentBlock != nullptr && i == currentBlock->provider) setBlockFromProvider(nullptr);
 }
 
+
+void Prop::sendBlackColorToProp(bool forceSend)
+{
+	if (!enabled->boolValue() && !forceSend) return;
+	//if (!isConnected->boolValue() || !twoWayConnected->boolValue()) return; //tmp unblock that
+	sendBlackColorToPropInternal();
+}
 
 void Prop::sendColorsToProp(bool forceSend)
 {

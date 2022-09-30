@@ -2,8 +2,9 @@
 
 <JUCERPROJECT name="BenTo" projectType="guiapp" headerPath="../../Source" id="LP0of5"
               version="1.4.0" projectLineFeed="&#10;" jucerFormatVersion="1"
-              cppLanguageStandard="17">
+              cppLanguageStandard="17" displaySplashScreen="1">
   <MAINGROUP id="zy2ady" name="BenTo">
+    <GROUP id="{9D57C38D-2122-8553-2F61-444666289842}" name="New Group"/>
     <GROUP id="{870E4241-9C31-E9AA-906B-7213EC4B54C1}" name="Resources">
       <GROUP id="{9DFF626B-2FA9-675B-A3EB-1B7780D709F0}" name="models">
         <GROUP id="{AA53C9C4-83BE-D8AE-2509-C14F27B31F7B}" name="patterns">
@@ -12,6 +13,9 @@
           <FILE id="Dr7vTV" name="solidColor.png" compile="0" resource="1" file="Resources/models/patterns/solidColor.png"/>
           <FILE id="WOljwS" name="strobe.png" compile="0" resource="1" file="Resources/models/patterns/strobe.png"/>
         </GROUP>
+        <FILE id="CPljsJ" name="blacklight.png" compile="0" resource="1" file="Resources/models/blacklight.png"/>
+        <FILE id="nvTipz" name="touchdesigner.png" compile="0" resource="1"
+              file="Resources/models/touchdesigner.png"/>
         <FILE id="S1AUx7" name="dmx.png" compile="0" resource="1" file="Resources/models/dmx.png"/>
         <FILE id="qD4otD" name="multipoint.png" compile="0" resource="1" file="Resources/models/multipoint.png"/>
         <FILE id="OO6Nta" name="node.png" compile="0" resource="1" file="Resources/models/node.png"/>
@@ -338,6 +342,12 @@
                   file="Source/LightBlock/model/ui/LightBlockModelUI.h"/>
           </GROUP>
           <GROUP id="{C96AC654-4C64-8355-A87B-58ED8C1FD39F}" name="blocks">
+            <GROUP id="{406806D1-C593-A0B3-33F8-D2FD86F43A3C}" name="blacklight">
+              <FILE id="nkeqYD" name="BlacklightBlock.h" compile="0" resource="0"
+                    file="Source/LightBlock/model/blocks/blacklight/BlacklightBlock.h"/>
+              <FILE id="Dc9NrZ" name="BlacklightBlock.cpp" compile="0" resource="0"
+                    file="Source/LightBlock/model/blocks/blacklight/BlacklightBlock.cpp"/>
+            </GROUP>
             <GROUP id="{EE5C0264-0254-0301-E4F8-139423483011}" name="wasm">
               <FILE id="hCW9le" name="WasmBlock.cpp" compile="0" resource="0" file="Source/LightBlock/model/blocks/wasm/WasmBlock.cpp"
                     xcodeResource="0"/>
@@ -409,6 +419,10 @@
               <FILE id="Dqo2jj" name="TextureBlock.cpp" compile="0" resource="0"
                     file="Source/LightBlock/model/blocks/video/TextureBlock.cpp"/>
               <FILE id="DlbLE0" name="TextureBlock.h" compile="0" resource="0" file="Source/LightBlock/model/blocks/video/TextureBlock.h"/>
+              <FILE id="gf8uQo" name="TouchdesignerBlock.h" compile="0" resource="0"
+                    file="Source/LightBlock/model/blocks/video/TouchdesignerBlock.h"/>
+              <FILE id="lwTmgA" name="TouchdesignerBlock.cpp" compile="0" resource="0"
+                    file="Source/LightBlock/model/blocks/video/TouchdesignerBlock.cpp"/>
               <FILE id="ntFSJH" name="VideoBlock.cpp" compile="0" resource="0" file="Source/LightBlock/model/blocks/video/VideoBlock.cpp"/>
               <FILE id="eocegK" name="VideoBlock.h" compile="0" resource="0" file="Source/LightBlock/model/blocks/video/VideoBlock.h"/>
             </GROUP>
@@ -643,7 +657,7 @@
       <MODULEPATHS>
         <MODULEPATH id="filmstro_audiohelpers" path="Modules"/>
         <MODULEPATH id="filmstro_ffmpeg" path="Modules"/>
-        <MODULEPATH id="juce_audio_basics"/>
+        <MODULEPATH id="juce_audio_basics" path="..\JUCE\modules\"/>
         <MODULEPATH id="juce_audio_devices"/>
         <MODULEPATH id="juce_audio_formats"/>
         <MODULEPATH id="juce_audio_processors"/>
@@ -651,7 +665,7 @@
         <MODULEPATH id="juce_core"/>
         <MODULEPATH id="juce_data_structures"/>
         <MODULEPATH id="juce_events"/>
-        <MODULEPATH id="juce_graphics" path="D:\Softwares\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="..\JUCE\modules\"/>
         <MODULEPATH id="juce_gui_basics"/>
         <MODULEPATH id="juce_gui_extra"/>
         <MODULEPATH id="juce_opengl"/>
@@ -716,7 +730,7 @@
         <MODULEPATH id="juce_events" path="JUCE/modules"/>
         <MODULEPATH id="juce_data_structures" path="JUCE/modules"/>
         <MODULEPATH id="juce_core" path="JUCE/modules"/>
-        <MODULEPATH id="juce_audio_utils" path="JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="..\JUCE\modules"/>
         <MODULEPATH id="juce_audio_processors" path="JUCE/modules"/>
         <MODULEPATH id="juce_audio_formats" path="JUCE/modules"/>
         <MODULEPATH id="juce_audio_devices" path="JUCE/modules"/>
@@ -751,7 +765,7 @@
         <MODULEPATH id="juce_events" path="JUCE/modules"/>
         <MODULEPATH id="juce_data_structures" path="JUCE/modules"/>
         <MODULEPATH id="juce_core" path="JUCE/modules"/>
-        <MODULEPATH id="juce_audio_utils" path="JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="..\JUCE\modules"/>
         <MODULEPATH id="juce_audio_processors" path="JUCE/modules"/>
         <MODULEPATH id="juce_audio_formats" path="JUCE/modules"/>
         <MODULEPATH id="juce_audio_devices" path="JUCE/modules"/>
@@ -762,7 +776,7 @@
         <MODULEPATH id="juce_simpleweb" path="Modules"/>
       </MODULEPATHS>
     </LINUX_MAKE>
-    <VS2019 targetFolder="Builds/VisualStudio2019_CI" externalLibraries="Setupapi.lib&#10;Servus.lib&#10;avcodec.lib&#10;avformat.lib&#10;avutil.lib&#10;swresample.lib&#10;swscale.lib"
+    <VS2019 targetFolder="Builds/VisualStudio2019_CI" externalLibraries="Setupapi.lib&#10;Servus.lib&#10;avcodec.lib&#10;avformat.lib&#10;avutil.lib&#10;swresample.lib&#10;swscale.lib&#10;libssl.lib"
             smallIcon="YlXmhK" bigIcon="YlXmhK" extraLinkerFlags="/HEAP:0x400000,0x10000"
             extraCompilerFlags="/Zm1000">
       <CONFIGURATIONS>
@@ -775,24 +789,24 @@
                        alwaysGenerateDebugSymbols="1" debugInformationFormat="ProgramDatabase"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
-        <MODULEPATH id="juce_video" path="JUCE/modules"/>
+        <MODULEPATH id="juce_video" path="..\JUCE\modules\"/>
         <MODULEPATH id="juce_timeline" path="Modules"/>
         <MODULEPATH id="juce_simpleweb" path="Modules"/>
         <MODULEPATH id="juce_sharedtexture" path="Modules"/>
-        <MODULEPATH id="juce_osc" path="JUCE/modules"/>
-        <MODULEPATH id="juce_organicui" path="Modules"/>
-        <MODULEPATH id="juce_opengl" path="JUCE/modules"/>
-        <MODULEPATH id="juce_gui_extra" path="JUCE/modules"/>
-        <MODULEPATH id="juce_gui_basics" path="JUCE/modules"/>
-        <MODULEPATH id="juce_graphics" path="JUCE/modules"/>
-        <MODULEPATH id="juce_events" path="JUCE/modules"/>
-        <MODULEPATH id="juce_data_structures" path="JUCE/modules"/>
-        <MODULEPATH id="juce_core" path="JUCE/modules"/>
-        <MODULEPATH id="juce_audio_utils" path="JUCE/modules"/>
-        <MODULEPATH id="juce_audio_processors" path="JUCE/modules"/>
-        <MODULEPATH id="juce_audio_formats" path="JUCE/modules"/>
-        <MODULEPATH id="juce_audio_devices" path="JUCE/modules"/>
-        <MODULEPATH id="juce_audio_basics" path="JUCE/modules"/>
+        <MODULEPATH id="juce_osc" path="..\JUCE\modules\"/>
+        <MODULEPATH id="juce_organicui" path="..\..\repos"/>
+        <MODULEPATH id="juce_opengl" path="..\JUCE\modules\"/>
+        <MODULEPATH id="juce_gui_extra" path="..\JUCE\modules\"/>
+        <MODULEPATH id="juce_gui_basics" path="..\JUCE\modules\"/>
+        <MODULEPATH id="juce_graphics" path="..\JUCE\modules\"/>
+        <MODULEPATH id="juce_events" path="..\JUCE\modules\"/>
+        <MODULEPATH id="juce_data_structures" path="..\JUCE\modules\"/>
+        <MODULEPATH id="juce_core" path="..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_utils" path="..\JUCE\modules\"/>
+        <MODULEPATH id="juce_audio_processors" path="..\JUCE\modules\"/>
+        <MODULEPATH id="juce_audio_formats" path="..\JUCE\modules\"/>
+        <MODULEPATH id="juce_audio_devices" path="..\JUCE\modules\"/>
+        <MODULEPATH id="juce_audio_basics" path="..\JUCE\modules\"/>
         <MODULEPATH id="filmstro_ffmpeg" path="Modules"/>
         <MODULEPATH id="filmstro_audiohelpers" path="Modules"/>
       </MODULEPATHS>
@@ -820,7 +834,7 @@
         <MODULEPATH id="juce_events" path="JUCE/modules"/>
         <MODULEPATH id="juce_data_structures" path="JUCE/modules"/>
         <MODULEPATH id="juce_core" path="JUCE/modules"/>
-        <MODULEPATH id="juce_audio_utils" path="JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="..\JUCE\modules"/>
         <MODULEPATH id="juce_audio_processors" path="JUCE/modules"/>
         <MODULEPATH id="juce_audio_formats" path="JUCE/modules"/>
         <MODULEPATH id="juce_audio_devices" path="JUCE/modules"/>

@@ -61,7 +61,7 @@ LightBlockModel * UserLightBlockModelManager::createItem()
 		return t;
 	}
 
-	case LIVE_FEED: return new LiveFeedBlock();
+	case LIVE_FEED: return new TouchdesignerBlock();
 	case VIDEO: return new VideoBlock();
 
 	case WASM: return new WasmBlock();

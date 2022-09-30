@@ -37,6 +37,8 @@ public:
 	bool settingLengthFromMethod; //set length
 
 	void setBlockFromProvider(LightBlockColorProvider * provider);
+
+	float getBlackBrightness(Prop* p, double time, var params);
 	Array<Colour> getColors(Prop * p, double absoluteTime, var params);
 
 	void addEffectFromProvider(LightBlockColorProvider* provider);

@@ -29,6 +29,7 @@ public:
 	std::unique_ptr<PropTargetFilterManager> filterManager;
 	IntParameter * previewID;
 
+	float getBlackBrightness(Prop* p, double time, var params);
 	Array<Colour> getColors(Prop * p, double time, var params);
 
 	void updateLinkedProps();

@@ -74,6 +74,32 @@ void LightBlockClip::setBlockFromProvider(LightBlockColorProvider * provider)
 		}
 	}
 }
+
+float LightBlockClip::getBlackBrightness(Prop* p, double absoluteTime, var params) {
+	if (currentBlock == nullptr) {
+		return 0;
+	}
+	
+
+	float factor = 1;
+
+	int id = params.getProperty("forceID", p->globalID->intValue());
+	float offset = id * timeOffsetByID->floatValue();
+	double relTimeTotal = absoluteTime - time->floatValue() + offset;
+	if (fadeIn->floatValue() > 0) factor *= jmin<double>(relTimeTotal / fadeIn->floatValue(), 1.f);
+	if (fadeOut->floatValue() > 0) factor *= jmin<double>((getTotalLength() - relTimeTotal) / fadeOut->floatValue(), 1.f);
+	factor = jmax(factor, 0.f);
+	if (dynamic_cast<TimelineBlock*>(currentBlock->provider.get()) != nullptr){
+		params.getDynamicObject()->setProperty("sequenceTime", false);
+	}
+
+	double relTimeLooped = getRelativeTime(absoluteTime, true);
+	relTimeLooped = fmodf(relTimeLooped + offset, getCoreEndTime());
+	float brightness = currentBlock->getBlackBrightness(p, relTimeLooped, params);
+
+	return factor * brightness;
+}
+
 Array<Colour> LightBlockClip::getColors(Prop * p, double absoluteTime, var params)
 {
 
