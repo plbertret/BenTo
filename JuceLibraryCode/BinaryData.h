@@ -20,6 +20,12 @@ namespace BinaryData
     extern const char*   strobe_png;
     const int            strobe_pngSize = 5621;
 
+    extern const char*   blacklight_png;
+    const int            blacklight_pngSize = 3365;
+
+    extern const char*   touchdesigner_png;
+    const int            touchdesigner_pngSize = 15502;
+
     extern const char*   dmx_png;
     const int            dmx_pngSize = 3170;
 
@@ -45,7 +51,7 @@ namespace BinaryData
     const int            video_pngSize = 6004;
 
     extern const char*   default_btlayout;
-    const int            default_btlayoutSize = 2458;
+    const int            default_btlayoutSize = 2561;
 
     extern const char*   fadeIn_png;
     const int            fadeIn_pngSize = 1868;
@@ -60,10 +66,10 @@ namespace BinaryData
     const int            new_pngSize = 675;
 
     extern const char*   shader_frag;
-    const int            shader_fragSize = 975;
+    const int            shader_fragSize = 1012;
 
     // Number of elements in the namedResourceList and originalFileNames arrays.
-    const int namedResourceListSize = 18;
+    const int namedResourceListSize = 20;
 
     // Points to the start of a list of resource names.
     extern const char* namedResourceList[];
